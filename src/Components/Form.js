@@ -22,20 +22,21 @@ class Form extends Component {
         })
     }
     handleSubmit = event => {
-        alert(` ${this.state.username} ${this.state.comment}`)
+        alert(`You have typed ${this.state.username} ${this.state.comment}`)
         event.preventDefault()//this function is to make page relode lost.
 
     }
     
     render() {
+        const { username, comment } = this.state
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <label>Username</label>
-                    <input type="text" value={this.state.username} onChange={this.handelUsernameChange}/>
+                    <input type="text" value={username} onChange={this.handelUsernameChange}/>
                     <div>
                         <label> Comment </label>
-                        <textarea value={this.state.comment} onChange={this.handleCommentChange}></textarea>
+                        <textarea value={comment} onChange={this.handleCommentChange}></textarea>
                     </div>
                     <div>
                         <button type="submit"> Submit </button>
